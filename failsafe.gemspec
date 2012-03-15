@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alex Sharp"]
   s.email       = ["ajsharp@gmail.com"]
-  s.homepage    = "https://github.com/ajsharp/failsafe"
+  s.homepage    = "https://github.com/zaarly/failsafe"
   s.summary     = %q{Tiny little library for silently handling errors so they don't interrupt program flow.}
   s.description = %q{}
 
