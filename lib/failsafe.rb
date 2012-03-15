@@ -9,15 +9,19 @@ module Failsafe
   # @example Adding multiple backends
   #   Failsafe::Config.error_backends << Failsafe::Backends::Airbrake
   #   Failsafe::Config.error_backends << Failsafe::Backends::Stderr
-  def error_backends
+  def self.error_backends
     @backends ||= []
   end
 
-  def failsafe
+  # Wraps code in a begin..rescue and delivers exceptions
+  # to the configured error backends.
+  #
+  # @todo make this threadsafe
+  def self.failsafe
     begin
       yield
     rescue => e
-      Config.error_backends.each do |backend|
+      error_backends.each do |backend|
         backend.new(e).save
       end
     end
