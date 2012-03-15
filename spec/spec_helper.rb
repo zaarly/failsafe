@@ -5,4 +5,5 @@ require 'failsafe'
 
 RSpec.configure do |config|
   config.mock_with :mocha
+  config.after { Failsafe.error_backends.clear }
 end
