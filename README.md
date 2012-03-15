@@ -1,3 +1,5 @@
+[![Build Status](http://travis-ci.org/zaarly/failsafe.png)](http://travis-ci.org/zaalry/failsafe)
+
 ## What
 
 Failsafe is a tiny library that makes it easy to make sure non-critical exceptions
