@@ -2,7 +2,7 @@ module Failsafe
   module Backends
     class File < Base
       def self.logger
-        @logger ||= ::Logger.new(::File.join(Rails.root, 'log', 'event_errors.log')).tap { |l| l.formatter = Logger::Formatter.new }
+        @logger ||= ::Logger.new(::File.join(Rails.root, 'log', 'failsafe_errors.log')).tap { |l| l.formatter = Logger::Formatter.new }
       end
 
       def save
