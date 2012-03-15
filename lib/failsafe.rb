@@ -1,10 +1,7 @@
 require 'logger'
 
-require 'failsafe/config'
 require 'failsafe/failure'
 
-# Mix this module into your classes to get failsafe functionality in
-# your classes.
 module Failsafe
 
   # Attach error backends to be fire when errors occur.
