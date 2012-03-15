@@ -8,7 +8,7 @@ describe Failsafe::Backends::Stderr do
 
   before do
     $stderr = StringIO.new
-    Failsafe::Backends::Stderr.stub!(:logger => ::Logger.new($stderr))
+    Failsafe::Backends::Stderr.stubs(:logger => ::Logger.new($stderr))
     exception.set_backtrace(["#{__FILE__}:6"])
     subject.save
     $stderr.rewind
