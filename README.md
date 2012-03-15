@@ -1,4 +1,4 @@
-[![Build Status](http://travis-ci.org/zaarly/failsafe.png)](http://travis-ci.org/zaalry/failsafe)
+[![Build Status](https://secure.travis-ci.org/zaarly/failsafe.png?branch=master)](http://travis-ci.org/zaarly/failsafe)
 
 ## What
 
