@@ -8,7 +8,7 @@ describe "configuring error backends" do
   end
 end
 
-describe Failsafe, "#failsafe" do
+describe Failsafe, ".failsafe" do
   class DangerousClass
     def boom_boom
       raise RuntimeError.new "room!"
@@ -31,3 +31,30 @@ describe Failsafe, "#failsafe" do
     subject
   end
 end
+
+describe "disabling failsafe" do
+  it "is not disabled by default" do
+    Failsafe.should_not be_disabled
+  end
+
+  context "when false" do
+    before { Failsafe.disabled = false }
+
+    it "allows exception to bubble up" do
+      expect {
+        Failsafe.failsafe { raise 'boom' }
+      }.not_to raise_error
+    end
+  end
+
+  context "when true" do
+    before { Failsafe.disabled = true }
+
+    it "allows errors to bubble up" do
+      expect {
+        Failsafe.failsafe { raise 'boom' }
+      }.to raise_error
+    end
+  end
+end
+

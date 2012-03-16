@@ -13,11 +13,29 @@ module Failsafe
     @backends ||= []
   end
 
+  @@disabled = false
+
+  # Determines if failsafe should rescue errors or let them bubble up.
+  #
+  # @default false
+  # @return [Boolean]
+  def self.disabled; @@disabled; end
+  def self.disabled?; disabled; end
+
+  def self.disabled=(val)
+    @@disabled = val
+  end
+
   # Wraps code in a begin..rescue and delivers exceptions
   # to the configured error backends.
   #
   # @todo make this threadsafe
   def self.failsafe
+    # Let errors bubble up if failsafe has been disabled
+    if disabled?
+      return yield
+    end
+
     begin
       yield
     rescue => e
