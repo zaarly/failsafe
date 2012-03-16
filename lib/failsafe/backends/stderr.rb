@@ -1,6 +1,8 @@
 
 module Failsafe
   module Backends
+
+    # Failure backend to log errors to stderr
     class Stderr < Base
       def self.logger
         @logger ||= ::Logger.new($stderr).tap { |l| l.formatter = Logger::Formatter.new }

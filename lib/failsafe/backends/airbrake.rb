@@ -1,7 +1,7 @@
 module Failsafe
   module Backends
 
-    # Send errors to Airbrake
+    # Failure backend to send errors to Airbrake
     class Airbrake < Base
       def save
         ::Airbrake.notify_or_ignore(exception)

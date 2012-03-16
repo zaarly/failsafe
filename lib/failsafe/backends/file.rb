@@ -1,5 +1,7 @@
 module Failsafe
   module Backends
+
+    # File failure backend. Writes exception backtraces to a logfile.
     class File < Base
       def self.logger
         @logger ||= ::Logger.new(::File.join(Rails.root, 'log', 'failsafe_errors.log')).tap { |l| l.formatter = Logger::Formatter.new }
