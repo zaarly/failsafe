@@ -63,7 +63,7 @@ Failsafe ships with three error backends by default:
 
 Note: The File backend by default logs to a log file in the log directory called
 failsafe_errors.log.  It can be optionally configured with a different path:
+
 ```ruby
 Failsafe::Backends::File.log_file_path = "/path/to/errors.log"
 ```
-
