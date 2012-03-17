@@ -61,4 +61,9 @@ Failsafe ships with three error backends by default:
 * Stderr - Send errors to stderr
 * File - Send errors to a log file
 
-Note: The File backend logs to a log file in the log directory called failsafe_errors.log.
+Note: The File backend by default logs to a log file in the log directory called
+failsafe_errors.log.  It can be optionally configured with a different path:
+```ruby
+Failsafe::Backends::File.log_file_path = "/path/to/errors.log"
+```
+
