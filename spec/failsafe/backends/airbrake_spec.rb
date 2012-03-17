@@ -12,7 +12,7 @@ describe Failsafe::Backends::Airbrake do
   subject { Failsafe::Backends::Airbrake.new(exception) }
 
   it "tells airbrake to notify or ignore the exception" do
-    Airbrake.expects(:notify_or_ignore).with(exception)
+    ::Airbrake.expects(:notify_or_ignore).with(exception)
     subject.save
   end
 end
