@@ -4,7 +4,7 @@ module Failsafe
     # Failure backend to send errors to Airbrake
     class Exceptional < Base
       def save
-        ::Exceptional::Catcher.handle(exception)
+        ::Exceptional.handle(exception)
       end
     end
   end
