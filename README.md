@@ -58,6 +58,7 @@ by failsafe, the exception object is handed to each error backend.
 Failsafe ships with three error backends by default:
 
 * Airbrake - Send errors to airbrake
+* Exceptional - Send errors to exceptional
 * Stderr - Send errors to stderr
 * File - Send errors to a log file
 
