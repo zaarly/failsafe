@@ -1,11 +1,5 @@
 require 'spec_helper'
 
-begin
-  Exceptional
-rescue NameError
-  module Exceptional;end
-end
-
 describe Failsafe::Backends::Exceptional do
   let(:exception) { stub("exception") }
 

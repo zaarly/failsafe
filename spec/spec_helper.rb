@@ -2,6 +2,7 @@ $:.push(File.expand_path(File.dirname(__FILE__)))
 $:.push(File.expand_path(File.dirname(__FILE__)) + '/../lib')
 
 require 'failsafe'
+require 'exceptional'
 
 class MockFailureBackend < Failsafe::Backends::Base
 end
