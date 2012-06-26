@@ -40,7 +40,7 @@ end
 
 ## Configuration
 
-Failsafe comes with 3 error backends by default: Airbrake, File, and Stderr.
+Failsafe comes with 4 error backends by default: Airbrake, Exceptiona, File, and Stderr.
 You must add them to the failsafe configuration in order to log exceptions
 to them:
 
@@ -51,11 +51,11 @@ Failsafe.error_backends << Failsafe::Backends::Stderr
 
 ## Backends
 
-"Backends" are what your exceptions get handled by instead of letting them
+"Backends" are what handle exceptions instead of letting them
 bubble up to the user. When an exception occurs within a piece of code wrapped
 by failsafe, the exception object is handed to each error backend.
 
-Failsafe ships with three error backends by default:
+Failsafe ships with four error backends by default:
 
 * Airbrake - Send errors to airbrake
 * Exceptional - Send errors to exceptional
