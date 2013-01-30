@@ -6,5 +6,6 @@ module Failsafe
     autoload :File,        'failsafe/backends/file'
     autoload :Stderr,      'failsafe/backends/stderr'
     autoload :Exceptional, 'failsafe/backends/exceptional'
+    autoload :Honeybadger, 'failsafe/backends/honeybadger'
   end
 end
