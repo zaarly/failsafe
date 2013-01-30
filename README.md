@@ -59,6 +59,7 @@ Failsafe ships with four error backends by default:
 
 * Airbrake - Send errors to airbrake
 * Exceptional - Send errors to exceptional
+* Honeybadger - Send errors to honeybadger (see: https://honeybadger.io)
 * Stderr - Send errors to stderr
 * File - Send errors to a log file
 
